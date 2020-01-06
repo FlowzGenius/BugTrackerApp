@@ -20,7 +20,15 @@ namespace BugTrackerUI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            //TO DO: Make login process better
+
+            if(ViewBag.IsLoggedIn == true)
+            {
+                return View();
+            }
+
+            return RedirectToAction("Login", "Account");
+            
         }
 
         public IActionResult Privacy()

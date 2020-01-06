@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackerUI", "BugTrackerUI\BugTrackerUI.csproj", "{AF3F0598-68B4-4820-AAE0-CDF20CF366D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTrackerUI", "BugTrackerUI\BugTrackerUI.csproj", "{AF3F0598-68B4-4820-AAE0-CDF20CF366D9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BugTracker.Data", "BugTracker.Data\BugTracker.Data.sqlproj", "{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{AF3F0598-68B4-4820-AAE0-CDF20CF366D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF3F0598-68B4-4820-AAE0-CDF20CF366D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF3F0598-68B4-4820-AAE0-CDF20CF366D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3AC6DC-1F26-4DDE-874A-3591ACDDB886}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

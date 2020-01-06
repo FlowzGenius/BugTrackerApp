@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[TicketStatus]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT newID(), 
+    [Status] NVARCHAR(50) NOT NULL
+)

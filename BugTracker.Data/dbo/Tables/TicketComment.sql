@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[TicketComment]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Comment] NVARCHAR(500) NOT NULL, 
+    [TicketID] UNIQUEIDENTIFIER NOT NULL, 
+    [AuthorID] UNIQUEIDENTIFIER NOT NULL, 
+    [CreateDate] DATETIME2 NOT NULL DEFAULT getdate(), 
+    CONSTRAINT [FK_TicketComment_ToTicket] FOREIGN KEY ([TicketID]) REFERENCES [Ticket]([ID]), 
+    CONSTRAINT [FK_TicketComment_ToUser] FOREIGN KEY ([AuthorID]) REFERENCES [UserInformation]([ID])
+)

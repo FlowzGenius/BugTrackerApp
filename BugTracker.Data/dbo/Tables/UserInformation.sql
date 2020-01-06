@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[UserInformation]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [Surname] NVARCHAR(50) NOT NULL, 
+    [Email] NVARCHAR(250) NOT NULL, 
+    [TeamID] UNIQUEIDENTIFIER NOT NULL, 
+    CONSTRAINT [FK_UserInformation_ToTeam] FOREIGN KEY ([TeamID]) REFERENCES [Team]([ID])
+)

@@ -61,6 +61,15 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Stored Procedures\Projects" />
+    <Folder Include="dbo\Stored Procedures\Teams" />
+    <Folder Include="dbo\Stored Procedures\Tickets" />
+    <Folder Include="dbo\Stored Procedures\TecketComents" />
+    <Folder Include="dbo\Stored Procedures\TicketPriorities" />
+    <Folder Include="dbo\Stored Procedures\TicketStatuses" />
+    <Folder Include="dbo\Stored Procedures\TicketTypes" />
+    <Folder Include="dbo\Stored Procedures\UserAddresses" />
+    <Folder Include="dbo\Stored Procedures\UserInformation" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Project.sql" />
@@ -72,6 +81,32 @@
     <Build Include="dbo\Tables\TicketPriority.sql" />
     <Build Include="dbo\Tables\TicketType.sql" />
     <Build Include="dbo\Tables\TicketComment.sql" />
+    <Build Include="dbo\Stored Procedures\Projects\spCreateProject.sql" />
+    <Build Include="dbo\Stored Procedures\Projects\spDeleteProjectById.sql" />
+    <Build Include="dbo\Stored Procedures\Projects\spUpdateProject.sql" />
+    <Build Include="dbo\Stored Procedures\Projects\spGetProjectById.sql" />
+    <Build Include="dbo\Stored Procedures\Projects\spGetAllProjects.sql" />
+    <Build Include="dbo\Stored Procedures\Teams\spCreateTeam.sql" />
+    <Build Include="dbo\Stored Procedures\Teams\spDeleteTeamById.sql" />
+    <Build Include="dbo\Stored Procedures\Teams\spGetAllTeams.sql" />
+    <Build Include="dbo\Stored Procedures\Teams\spGetTeamById.sql" />
+    <Build Include="dbo\Stored Procedures\Teams\spUpdateTeam.sql" />
+    <Build Include="dbo\Stored Procedures\TecketComents\spDeleteComment.sql" />
+    <Build Include="dbo\Stored Procedures\TecketComents\spGetCommentsByTicketId.sql" />
+    <Build Include="dbo\Stored Procedures\Tickets\spCreateTicket.sql" />
+    <Build Include="dbo\Stored Procedures\Tickets\spDeleteTicketById.sql" />
+    <Build Include="dbo\Stored Procedures\Tickets\spGetAllTickets.sql" />
+    <Build Include="dbo\Stored Procedures\Tickets\spGetTicketById.sql" />
+    <Build Include="dbo\Stored Procedures\Tickets\spUpdateTicket.sql" />
+    <Build Include="dbo\Stored Procedures\UserAddresses\spCreateAddress.sql" />
+    <Build Include="dbo\Stored Procedures\UserAddresses\spDeleteAddressById.sql" />
+    <Build Include="dbo\Stored Procedures\UserAddresses\spUpdateAddress.sql" />
+    <Build Include="dbo\Stored Procedures\UserAddresses\spGetAddressesByUserId.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spCreateUser.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spDeleteUsertById.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spGetAllUsers.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spGetUserById.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spUpdateTicket.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BugTracker.Data.refactorlog" />

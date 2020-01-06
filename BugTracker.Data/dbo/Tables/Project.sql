@@ -5,6 +5,7 @@
     [CreatorID] UNIQUEIDENTIFIER NOT NULL, 
     [TeamID] UNIQUEIDENTIFIER NOT NULL, 
     [CreateDate] DATETIME2 NOT NULL DEFAULT getdate(), 
+    [IsDeleted] BIT NOT NULL DEFAULT 0, 
     CONSTRAINT [FK_Project_ToUser] FOREIGN KEY (CreatorID) REFERENCES [UserInformation]([Id]), 
     CONSTRAINT [FK_Project_ToTeam] FOREIGN KEY ([TeamID]) REFERENCES [Team]([Id]) 
 )

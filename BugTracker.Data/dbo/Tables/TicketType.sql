@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[TicketType]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT newID(), 
-    [Type] NCHAR(10) NOT NULL
+    [Type] NVARCHAR(50) NOT NULL
 )

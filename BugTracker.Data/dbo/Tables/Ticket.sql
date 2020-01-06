@@ -8,6 +8,8 @@
     [StatusID] UNIQUEIDENTIFIER NOT NULL, 
     [PriorityID] UNIQUEIDENTIFIER NOT NULL, 
     [CreateDate] DATETIME2 NOT NULL DEFAULT getdate(), 
+    [IsDeleted] BIT NOT NULL DEFAULT 0, 
+
     CONSTRAINT [FK_Ticket_ToType] FOREIGN KEY ([TypeID]) REFERENCES [TicketType]([Id]), 
     CONSTRAINT [FK_Ticket_ToProject] FOREIGN KEY ([ProjectID]) REFERENCES [Project]([Id]), 
     CONSTRAINT [FK_Ticket_ToUser] FOREIGN KEY ([DeveloperID]) REFERENCES [UserInformation]([Id]), 

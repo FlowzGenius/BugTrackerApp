@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using BugTrackeData.Library.Internal.DataAccess.Contracts;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace BugTrackeData.Library.Internal.DataAccess
 {
-    public class SqlDataAccess
+    public class SqlDataAccess : ISqlDataAccess
     {
         private string GetConnecctionString(string connectionStringName)
         {
@@ -21,7 +22,7 @@ namespace BugTrackeData.Library.Internal.DataAccess
         {
             string connectionString = GetConnecctionString(connectionStringName);
 
-            using(IDbConnection cnn = new SqlConnection(connectionString))
+            using (IDbConnection cnn = new SqlConnection(connectionString))
             {
                 var output = cnn.Query<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure).AsList();
 
@@ -33,7 +34,7 @@ namespace BugTrackeData.Library.Internal.DataAccess
         {
             string connectionString = GetConnecctionString(connectionStringName);
 
-            using(IDbConnection cnn = new SqlConnection(connectionString))
+            using (IDbConnection cnn = new SqlConnection(connectionString))
             {
                 cnn.Execute(storedProcedure, parametres, commandType: CommandType.StoredProcedure);
             }

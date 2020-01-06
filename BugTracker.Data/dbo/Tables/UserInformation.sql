@@ -5,5 +5,5 @@
     [Surname] NVARCHAR(50) NOT NULL, 
     [Email] NVARCHAR(250) NOT NULL, 
     [TeamID] UNIQUEIDENTIFIER NOT NULL, 
-    CONSTRAINT [FK_UserInformation_ToTeam] FOREIGN KEY ([TeamID]) REFERENCES [Team]([ID])
+    CONSTRAINT [FK_UserInformation_ToTeam] FOREIGN KEY ([TeamID]) REFERENCES [Team]([Id])
 )

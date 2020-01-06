@@ -5,6 +5,6 @@
     [TicketID] UNIQUEIDENTIFIER NOT NULL, 
     [AuthorID] UNIQUEIDENTIFIER NOT NULL, 
     [CreateDate] DATETIME2 NOT NULL DEFAULT getdate(), 
-    CONSTRAINT [FK_TicketComment_ToTicket] FOREIGN KEY ([TicketID]) REFERENCES [Ticket]([ID]), 
-    CONSTRAINT [FK_TicketComment_ToUser] FOREIGN KEY ([AuthorID]) REFERENCES [UserInformation]([ID])
+    CONSTRAINT [FK_TicketComment_ToTicket] FOREIGN KEY ([TicketID]) REFERENCES [Ticket]([Id]), 
+    CONSTRAINT [FK_TicketComment_ToUser] FOREIGN KEY ([AuthorID]) REFERENCES [UserInformation]([Id])
 )

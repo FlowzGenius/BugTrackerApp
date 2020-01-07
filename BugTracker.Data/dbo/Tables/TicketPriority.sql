@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[TicketPriority]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT newID(), 
-    [Priority] NVARCHAR(50) NOT NULL
+    [Priority] NVARCHAR(50) NOT NULL, 
+    [IsCustom] BIT NOT NULL DEFAULT 0
 )

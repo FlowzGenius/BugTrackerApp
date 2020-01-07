@@ -106,7 +106,17 @@
     <Build Include="dbo\Stored Procedures\UserInformation\spDeleteUsertById.sql" />
     <Build Include="dbo\Stored Procedures\UserInformation\spGetAllUsers.sql" />
     <Build Include="dbo\Stored Procedures\UserInformation\spGetUserById.sql" />
-    <Build Include="dbo\Stored Procedures\UserInformation\spUpdateTicket.sql" />
+    <Build Include="dbo\Stored Procedures\UserInformation\spUpdateUser.sql" />
+    <Build Include="dbo\Stored Procedures\TecketComents\spCreateComment.sql" />
+    <Build Include="dbo\Stored Procedures\TicketPriorities\spCreateTicketPriority.sql" />
+    <Build Include="dbo\Stored Procedures\TicketPriorities\spDeleteTicketPriority.sql" />
+    <Build Include="dbo\Stored Procedures\TicketPriorities\spUpdateTicketPriority.sql" />
+    <Build Include="dbo\Stored Procedures\TicketStatuses\spDeleteTicketStatus.sql" />
+    <Build Include="dbo\Stored Procedures\TicketStatuses\spCreateTicketStatus.sql" />
+    <Build Include="dbo\Stored Procedures\TicketStatuses\UpdateTicketStatus.sql" />
+    <Build Include="dbo\Stored Procedures\TicketTypes\spDeleteTicketType.sql" />
+    <Build Include="dbo\Stored Procedures\TicketTypes\spCreateTicketType.sql" />
+    <Build Include="dbo\Stored Procedures\TicketTypes\spUpdateTicketType.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BugTracker.Data.refactorlog" />

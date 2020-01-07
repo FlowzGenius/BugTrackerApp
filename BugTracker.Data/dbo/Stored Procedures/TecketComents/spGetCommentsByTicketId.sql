@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spGetCommentsByTicketId]
-	@param1 int = 0,
-	@param2 int
+	@TicketId UniqueIdentifier
 AS
-	SELECT @param1, @param2
-RETURN 0
+BEGIN
+	set nocount on;
+
+	Select [Id], [Comment], [AuthorID], [CreateDate] from TicketComment
+	where [TicketID] = @TicketId  AND IsDeleted = 0 Order by [CreateDate];
+END

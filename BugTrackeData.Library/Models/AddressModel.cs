@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BugTrackeData.Library.Models
 {
-    public class UserAddressModel
+    public class AddressModel
     {
         public Guid Id { get; set; }
         public Guid UserID { get; set; }

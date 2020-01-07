@@ -30,7 +30,19 @@ namespace BugTrackeData.Library.Internal.DataAccess
             }
         }
 
-        public void SaveData<T>(string storedProcedure, T parametres, string connectionStringName)
+        public T GetObject<T, U>(string storedProcedure, U parameters, string connectionStringName)
+        {
+            string connectionString = GetConnecctionString(connectionStringName);
+
+            using(IDbConnection cnn = new SqlConnection(connectionString))
+            {
+                var output = cnn.Query<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure).AsList()[0];
+
+                return output;
+            }
+        }
+
+        public void ManageData<T>(string storedProcedure, T parametres, string connectionStringName)
         {
             string connectionString = GetConnecctionString(connectionStringName);
 

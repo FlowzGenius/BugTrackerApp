@@ -7,20 +7,20 @@ using System.Text;
 
 namespace BugTrackeData.Library.DataAccess
 {
-    public class UserData : IUserData
+    public class AddressData : IAddressData
     {
         private readonly ISqlDataAccess _dataAccess;
 
-        public UserData(ISqlDataAccess dataAccess)
+        public AddressData(ISqlDataAccess dataAccess)
         {
             this._dataAccess = dataAccess;
         }
 
-        public void CreateUser(UserModel project)
+        public void CreateAddress(AddressModel project)
         {
             try
             {
-                _dataAccess.ManageData("dbo.spCreateUser", project, "BugTrackerData");
+                _dataAccess.ManageData("dbo.spCreateAddress", project, "BugTrackerData");
             }
             catch (Exception e)
             {
@@ -29,27 +29,13 @@ namespace BugTrackeData.Library.DataAccess
             }
         }
 
-        public List<UserModel> GetAllUsers()
-        {
-            try
-            {
-                var output = _dataAccess.LoadData<UserModel, dynamic>("dbo.spGetAllUsers", new { }, "BugTrackerData");
-
-                return output;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-        public void DeleteUser(Guid id)
+        public void DeleteAddress(Guid id)
         {
             try
             {
                 var param = new { Id = id };
 
-                _dataAccess.ManageData<dynamic>("dbo.spDeleteUserById", param, "BugTrackerData");
+                _dataAccess.ManageData<dynamic>("dbo.spDeleteAddressById", param, "BugTrackerData");
             }
             catch (Exception e)
             {
@@ -57,13 +43,13 @@ namespace BugTrackeData.Library.DataAccess
             }
         }
 
-        public UserData GetUser(Guid id)
+        public List<AddressData> GetAddress(Guid userId)
         {
             try
             {
-                var param = new { Id = id };
+                var param = new { Id = userId };
 
-                var output = _dataAccess.GetObject<UserData, dynamic>("dbo.spGetUserById", param, "BugTrackerData");
+                var output = _dataAccess.LoadData<AddressData, dynamic>("dbo.spGetAddressByUserId", param, "BugTrackerData");
 
                 return output;
             }
@@ -74,12 +60,12 @@ namespace BugTrackeData.Library.DataAccess
             }
         }
 
-        public void UpdateUser(UserModel project)
+        public void UpdateAddress(AddressModel project)
         {
 
             try
             {
-                _dataAccess.ManageData("dbo.spUpdateUser", project, "BugTrackerData");
+                _dataAccess.ManageData("dbo.spUpdateAddress", project, "BugTrackerData");
             }
             catch (Exception e)
             {

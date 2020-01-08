@@ -1,4 +1,6 @@
 ﻿using BugTrackeData.Library.DataAccess.Contracts;
+using BugTrackeData.Library.Internal.Constants.ConnectionStringName;
+using BugTrackeData.Library.Internal.Constants.StoredProcedures;
 using BugTrackeData.Library.Internal.DataAccess.Contracts;
 using BugTrackeData.Library.Models;
 using System;
@@ -22,7 +24,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { Id = id };
 
-                _dataAccess.ManageData("dbo.spDeleteComment", param, "BugTrackerData");
+                _dataAccess.ManageData(SpTicketComment.SpDeleteComment, param, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {
@@ -34,7 +36,7 @@ namespace BugTrackeData.Library.DataAccess
         {
             try
             {
-                _dataAccess.ManageData("dbo.spCreateComment", comment, "BugTrackerData");
+                _dataAccess.ManageData(SpTicketComment.SpCreateComment, comment, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception)
             {
@@ -49,7 +51,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { TicketId = ticketID };
 
-                var output = _dataAccess.LoadData<TicketCommentModel, dynamic>("dbo.spGetTicketCommentsByTicketId", param, "BugTrackerData");
+                var output = _dataAccess.LoadData<TicketCommentModel, dynamic>(SpTicketComment.SpGetCommentsByTicketId, param, CnnStringConfig.BugTrackerCnnString);
 
                 return output;
             }

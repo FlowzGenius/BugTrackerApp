@@ -1,4 +1,6 @@
 ﻿using BugTrackeData.Library.DataAccess.Contracts;
+using BugTrackeData.Library.Internal.Constants.ConnectionStringName;
+using BugTrackeData.Library.Internal.Constants.StoredProcedures;
 using BugTrackeData.Library.Internal.DataAccess.Contracts;
 using BugTrackeData.Library.Models;
 using System;
@@ -20,7 +22,7 @@ namespace BugTrackeData.Library.DataAccess
         {
             try
             {
-                _dataAccess.ManageData("dbo.spCreateAddress", project, "BugTrackerData");
+                _dataAccess.ManageData(SpUserAddress.SpCreateAddress, project, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {
@@ -35,7 +37,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { Id = id };
 
-                _dataAccess.ManageData<dynamic>("dbo.spDeleteAddressById", param, "BugTrackerData");
+                _dataAccess.ManageData<dynamic>(SpUserAddress.SpDeleteAddressById, param, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {
@@ -49,7 +51,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { Id = userId };
 
-                var output = _dataAccess.LoadData<AddressData, dynamic>("dbo.spGetAddressByUserId", param, "BugTrackerData");
+                var output = _dataAccess.LoadData<AddressData, dynamic>(SpUserAddress.SpDeleteAddressById, param, CnnStringConfig.BugTrackerCnnString);
 
                 return output;
             }
@@ -65,7 +67,7 @@ namespace BugTrackeData.Library.DataAccess
 
             try
             {
-                _dataAccess.ManageData("dbo.spUpdateAddress", project, "BugTrackerData");
+                _dataAccess.ManageData(SpUserAddress.SpUpdateAddress, project, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {

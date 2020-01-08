@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spUpdateTicketStatus]
-	@param1 int = 0,
-	@param2 int
+	@Status Text
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	set nocount on;
+
+	Update TicketStatus
+	set [Status] = @Status;
+end

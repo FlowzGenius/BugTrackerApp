@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateTicketType]
-	@param1 int = 0,
-	@param2 int
+	@Type Text
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	set nocount on
+
+	Insert Into TicketType([Type], [IsCustom])
+	Values(@Type, 1);
+end

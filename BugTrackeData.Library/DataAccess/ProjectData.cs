@@ -1,4 +1,6 @@
 ﻿using BugTrackeData.Library.DataAccess.Contracts;
+using BugTrackeData.Library.Internal.Constants.ConnectionStringName;
+using BugTrackeData.Library.Internal.Constants.StoredProcedures;
 using BugTrackeData.Library.Internal.DataAccess.Contracts;
 using BugTrackeData.Library.Models;
 using System;
@@ -20,7 +22,7 @@ namespace BugTrackeData.Library.DataAccess
         {
             try
             {
-                _dataAccess.ManageData("dbo.spCreateProject", project, "BugTrackerData");
+                _dataAccess.ManageData(SpProject.SpCreateProject, project, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {
@@ -33,7 +35,7 @@ namespace BugTrackeData.Library.DataAccess
         {
             try
             {
-                var output = _dataAccess.LoadData<ProjectModel, dynamic>("dbo.spGetAllProjects", new { }, "BugTrackerData");
+                var output = _dataAccess.LoadData<ProjectModel, dynamic>(SpProject.SpGetAllProjects, new { }, CnnStringConfig.BugTrackerCnnString);
 
                 return output;
             }
@@ -49,7 +51,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { Id = id };
 
-                _dataAccess.ManageData<dynamic>("dbo.spDeleteProjectById", param, "BugTrackerData");
+                _dataAccess.ManageData<dynamic>(SpProject.SpDeleteProjectById, param, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {
@@ -63,7 +65,7 @@ namespace BugTrackeData.Library.DataAccess
             {
                 var param = new { Id = id };
 
-                var output = _dataAccess.GetObject<ProjectData, dynamic>("dbo.spGetProjectById", param, "BugTrackerData");
+                var output = _dataAccess.GetObject<ProjectData, dynamic>(SpProject.SpGetProjectById, param, CnnStringConfig.BugTrackerCnnString);
 
                 return output;
             }
@@ -79,7 +81,7 @@ namespace BugTrackeData.Library.DataAccess
 
             try
             {
-                _dataAccess.ManageData("dbo.spUpdateProject", project, "BugTrackerData");
+                _dataAccess.ManageData(SpProject.SpUpdateProject, project, CnnStringConfig.BugTrackerCnnString);
             }
             catch (Exception e)
             {

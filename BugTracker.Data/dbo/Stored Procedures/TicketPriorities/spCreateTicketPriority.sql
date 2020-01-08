@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spCreateTicketPriority]
-	@param1 int = 0,
-	@param2 int
+		@Priority Text
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	set nocount on
+
+	Insert Into TicketPriority([Priority], [IsCustom])
+	Values(@Priority, 1);
+end

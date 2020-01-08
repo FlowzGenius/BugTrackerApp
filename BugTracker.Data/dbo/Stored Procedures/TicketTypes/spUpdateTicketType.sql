@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[UpdateTicketType]
-	@param1 int = 0,
-	@param2 int
+	@Type Text
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	set nocount on;
+
+	Update TicketType
+	set [Type] = @Type;
+end

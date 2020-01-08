@@ -1,6 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[spDeleteTicketStatus]
-	@param1 int = 0,
-	@param2 int
+	@Id UniqueIdentifier
 AS
-	SELECT @param1, @param2
-RETURN 0
+begin
+	set nocount on
+
+	Delete from TicketStatus 
+	where [Id] = @Id
+end
